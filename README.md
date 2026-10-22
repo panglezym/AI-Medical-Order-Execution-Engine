@@ -3,16 +3,19 @@
 > 用 AI 消除医嘱执行中的人工误差，实现每一条医嘱的完整生命周期追踪与闭环。  
 > *AI-driven medical order lifecycle management — from creation to execution, fully closed-loop.*
 
-[![用户规模](https://img.shields.io/badge/用户规模-10万-3A78F2?style=flat-square)](.)
+[![设计容量](https://img.shields.io/badge/设计容量-10万用户-3A78F2?style=flat-square)](.)
 [![页面数量](https://img.shields.io/badge/页面-22个高保真-3A78F2?style=flat-square)](.)
 [![角色覆盖](https://img.shields.io/badge/角色-医生%20·%20护士%20·%20管理-4CAF50?style=flat-square)](.)
-[![License](https://img.shields.io/badge/license-MIT-gray?style=flat-square)](.)
+
+> 这是一个 AI 产品经理的设计练习：仓库里是可交互的高保真原型（`index.html`）和 PRD，不含后端代码。文中的数字都是设计目标或原型里的示例数据。
+
+**👉 [在线预览](https://panglezym.github.io/AI-Medical-Order-Execution-Engine/)**
 
 ---
 
 ## 📌 产品定位
 
-**AI 医嘱任务引擎**是一个面向康养中心的 AI 驱动医嘱闭环管理系统，覆盖医嘱从创建、AI 解析、任务拆解、护士执行到管理监控的全流程，服务**医生、护士、管理**三类角色，支撑 10 万用户规模。
+**AI 医嘱任务引擎**是一个面向康养中心的 AI 驱动医嘱闭环管理系统，覆盖医嘱从创建、AI 解析、任务拆解、护士执行到管理监控的全流程，服务**医生、护士、管理**三类角色，按 10 万用户规模设计。
 
 系统核心价值：
 - **医嘱解析自动化** — 医生自然语言输入，AI 自动提取结构化字段，解放填表负担
@@ -223,55 +226,18 @@ AI 错误上报       →  模型训练数据    →  持续提升解析准确�
 
 ---
 
-## 🚀 快速开始
+## 🚀 怎么看
 
-```bash
-# 克隆项目
-git clone [https://github.com/your-org/ai-medical-order-engine.git
-cd ai-medical-order-engine](https://github.com/panglezym/AI-Medical-Order-Execution-Engine)
+- 在线预览：https://panglezym.github.io/AI-Medical-Order-Execution-Engine/
+- 本地查看：下载 `index.html`，直接用浏览器打开
+- 完整需求：[AI医嘱任务引擎_PRD_v1.0.pdf](AI%E5%8C%BB%E5%98%B1%E4%BB%BB%E5%8A%A1%E5%BC%95%E6%93%8E_PRD_v1.0.pdf)
 
-# 安装依赖
-npm install
-
-# 配置环境变量
-cp .env.example .env
-# 填写 NLP 服务地址、数据库连接、WebSocket 推送服务等配置
-
-# 本地开发启动
-npm run dev
-
-# 构建生产版本
-npm run build
-```
-
-**环境要求：**
-- Node.js ≥ 18
-- NLP 解析服务（可对接内部模型或第三方医疗 NLP API）
-- WebSocket / SSE 推送服务（支持三端实时数据同步）
-- 条码扫描 SDK（腕带 + 药品二维码 / 条形码）
-
----
-
-## 📁 项目结构
+## 📁 仓库内容
 
 ```
-ai-medical-order-engine/
-├── src/
-│   ├── portals/
-│   │   ├── doctor/             # 医生端（医嘱创建 / AI 确认 / 详情 / 列表）
-│   │   ├── nurse/              # 护士端（任务列表 / 详情 / 扫码执行 / 异常上报）
-│   │   └── admin/              # 管理端（大屏 / 投诉链路 / 质量分析 / 下钻）
-│   ├── core/
-│   │   ├── ai-parser/          # AI 解析引擎（NLP + 置信度评分）
-│   │   ├── task-scheduler/     # 任务拆解与自动派发
-│   │   ├── scan-validator/     # 扫码双重核验逻辑
-│   │   ├── realtime-sync/      # 三端实时数据同步（WebSocket/SSE）
-│   │   └── audit-trail/        # 操作留痕 + 投诉链路重建
-│   ├── common/
-│   │   ├── components/         # 通用 UI 组件
-│   │   └── permissions/        # 三端权限控制
-│   └── pages/
-│       └── shared/             # 公共页面（登录 / 注册 / 设置等）
+.
+├── index.html    # 高保真交互原型（三端 22 个页面）
+├── AI医嘱任务引擎_PRD_v1.0.pdf    # 产品需求文档
 └── README.md
 ```
 
@@ -279,27 +245,25 @@ ai-medical-order-engine/
 
 ## 🗺️ Roadmap
 
-**当前版本（MVP）**
-- [x] 医生端：自然语言/语音医嘱输入 + AI 结构化解析
-- [x] 医生端：解析置信度可视化 + 一键错误上报
-- [x] 护士端：今日任务列表 + 扫码双重核验执行
-- [x] 护士端：异常上报（照片 + 语音）
-- [x] 管理端：实时操作大屏 + AI 风险预警
-- [x] 管理端：投诉链路重建（24 小时全链路还原）
-- [x] 三端权限隔离 + 操作留痕审计
+**MVP 范围（原型已演示）**
+- 医生端：自然语言/语音医嘱输入 + AI 结构化解析
+- 医生端：解析置信度可视化 + 一键错误上报
+- 护士端：今日任务列表 + 扫码双重核验执行
+- 护士端：异常上报（照片 + 语音）
+- 管理端：实时操作大屏 + AI 风险预警
+- 管理端：投诉链路重建（24 小时全链路还原）
+- 三端权限隔离 + 操作留痕审计
 
 **后续规划**
 - [ ] AI 模型持续训练闭环（错误上报标注数据自动入队）
 - [ ] 个性化排班建议（基于护理质量分析数据）
 - [ ] 多院区数据聚合与横向对比分析
-- [ ] 移动端原生 App（当前为 Web/PWA）
+- [ ] 移动端原生 App（原型为 Web 端）
 - [ ] HL7 / FHIR 标准接口对接（支持第三方 HIS 系统集成）
 
 ---
 
-## 🤝 贡献指南
-
-欢迎提交 Issue 和 Pull Request。贡献前请注意：
+## 🛡️ 安全关键约束（给后续实现的要求）
 
 - **安全关键路径（Safety-Critical）**：扫码核验、权限控制相关代码修改须经过完整的测试与审查，任何回归都可能导致医疗差错风险
 - **数据完整性**：操作留痕和投诉链路数据不可篡改，禁止添加任何删除或修改历史记录的接口
@@ -309,7 +273,7 @@ ai-medical-order-engine/
 
 ## 📄 License
 
-MIT License · © 赵永明
+仅供学习交流，转载请注明出处。© 赵永明
 
 ---
 
