@@ -7,7 +7,7 @@
 [![页面数量](https://img.shields.io/badge/页面-22个高保真-3A78F2?style=flat-square)](.)
 [![角色覆盖](https://img.shields.io/badge/角色-医生%20·%20护士%20·%20管理-4CAF50?style=flat-square)](.)
 
-> 这是一个 AI 产品经理的设计练习：仓库里是可交互的高保真原型（`index.html`）和 PRD，不含后端代码。文中的数字都是设计目标或原型里的示例数据。
+> 这是一个产品设计练习：仓库里是可交互的高保真原型（`index.html`）和 PRD，不含后端代码。文中的数字都是设计目标或原型里的示例数据。
 
 **👉 [在线预览](https://panglezym.github.io/AI-Medical-Order-Execution-Engine/)**
 
